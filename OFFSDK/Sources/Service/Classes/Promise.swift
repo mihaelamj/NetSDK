@@ -1,9 +1,8 @@
 //
 //  Promise.swift
-//  BoostSDK
 //
 //  Created by Ondrej Rafaj on 01/04/2018.
-//  Copyright © 2018 LiveUI. All rights reserved.
+//  Copyright © 2018 Mihaela Mihaljevic Jakic and Ondrej Rafaj. All rights reserved.
 //
 
 import Foundation
@@ -11,15 +10,11 @@ import Foundation
 public class Promise<Expectation> {
     
     public typealias Map<T> = ((Expectation) throws -> T)
-    public typealias ErrorMap<T> = ((Error) throws -> T)
     public typealias Success = ((Expectation) throws -> Void)
     public typealias Failure = ((Error) -> Void)
     
     var mapClosure: Map<Any>?
     var mapPromise: Promise<Any>?
-    
-    var catchMapClosure: ErrorMap<Any>?
-    var catchMapPromise: Promise<Any>?
     
     var successClosure: Success?
     var errorClosure: Failure?
@@ -60,25 +55,6 @@ public class Promise<Expectation> {
         mapPromise = promise as? Promise<Any>
         return promise
     }
-    
-//    @discardableResult public func catchMap<T>(_ map: @escaping ErrorMap<T>) throws -> Promise<T> {
-//        catchMapClosure = map
-//        let promise = Promise<T>()
-//        
-//        if let fulfilledError = fulfilledError {
-//            do {
-//                if let result = try catchMapClosure?(fulfilledError) as? T {
-//                    promise.complete(result)
-//                } else {
-//                    promise.fail(Problem.unknownProblem)
-//                }
-//            } catch {
-//                promise.fail(error)
-//            }
-//        }
-//        catchMapPromise = promise as? Promise<Any>
-//        return promise
-//    }
     
     // MARK: Internal interface
     

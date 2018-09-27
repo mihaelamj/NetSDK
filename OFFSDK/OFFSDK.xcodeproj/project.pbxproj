@@ -71,6 +71,9 @@
 		A95BD370215D342F009B84FD /* NetworkService+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD36F215D342F009B84FD /* NetworkService+Helpers.swift */; };
 		A95BD371215D342F009B84FD /* NetworkService+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD36F215D342F009B84FD /* NetworkService+Helpers.swift */; };
 		A95BD372215D342F009B84FD /* NetworkService+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD36F215D342F009B84FD /* NetworkService+Helpers.swift */; };
+		A95BD375215D42E2009B84FD /* APILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD374215D42E2009B84FD /* APILogger.swift */; };
+		A95BD376215D42E2009B84FD /* APILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD374215D42E2009B84FD /* APILogger.swift */; };
+		A95BD377215D42E2009B84FD /* APILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD374215D42E2009B84FD /* APILogger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +152,7 @@
 		A95BD367215D3345009B84FD /* NetworkService+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkService+Promise.swift"; sourceTree = "<group>"; };
 		A95BD36B215D336A009B84FD /* NetworkService+REST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkService+REST.swift"; sourceTree = "<group>"; };
 		A95BD36F215D342F009B84FD /* NetworkService+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService+Helpers.swift"; sourceTree = "<group>"; };
+		A95BD374215D42E2009B84FD /* APILogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILogger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,14 +327,7 @@
 		A95BD314215D1F3F009B84FD /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				A95BD335215D2294009B84FD /* Promise.swift */,
-				A95BD325215D209F009B84FD /* Problem.swift */,
-				A95BD331215D21A7009B84FD /* ApiError.swift */,
-				A95BD329215D20BD009B84FD /* Codable+Tools.swift */,
-				A95BD339215D2FA9009B84FD /* Query.swift */,
-				A95BD32D215D2114009B84FD /* ErrorDataObject.swift */,
-				A95BD321215D2096009B84FD /* MMJResult.swift */,
-				A95BD33D215D30DE009B84FD /* NetworkActivityIndicator.swift */,
+				A95BD373215D40A6009B84FD /* Classes */,
 				A95BD310215D1F2A009B84FD /* SessionRequest.swift */,
 				A95BD315215D1F5D009B84FD /* NetworkService.swift */,
 				A95BD36B215D336A009B84FD /* NetworkService+REST.swift */,
@@ -367,6 +364,22 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A95BD373215D40A6009B84FD /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A95BD335215D2294009B84FD /* Promise.swift */,
+				A95BD325215D209F009B84FD /* Problem.swift */,
+				A95BD331215D21A7009B84FD /* ApiError.swift */,
+				A95BD329215D20BD009B84FD /* Codable+Tools.swift */,
+				A95BD339215D2FA9009B84FD /* Query.swift */,
+				A95BD32D215D2114009B84FD /* ErrorDataObject.swift */,
+				A95BD321215D2096009B84FD /* MMJResult.swift */,
+				A95BD33D215D30DE009B84FD /* NetworkActivityIndicator.swift */,
+				A95BD374215D42E2009B84FD /* APILogger.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -687,6 +700,7 @@
 				A95BD36C215D336A009B84FD /* NetworkService+REST.swift in Sources */,
 				A95BD32A215D20BD009B84FD /* Codable+Tools.swift in Sources */,
 				A95BD31A215D1F85009B84FD /* HTTPMethod.swift in Sources */,
+				A95BD375215D42E2009B84FD /* APILogger.swift in Sources */,
 				A95BD336215D2294009B84FD /* Promise.swift in Sources */,
 				A95BD304215D1E5D009B84FD /* HTTPStatusCodes+Extensions.swift in Sources */,
 				A95BD322215D2096009B84FD /* MMJResult.swift in Sources */,
@@ -718,6 +732,7 @@
 				A95BD36D215D336A009B84FD /* NetworkService+REST.swift in Sources */,
 				A95BD32B215D20BD009B84FD /* Codable+Tools.swift in Sources */,
 				A95BD31B215D1F85009B84FD /* HTTPMethod.swift in Sources */,
+				A95BD376215D42E2009B84FD /* APILogger.swift in Sources */,
 				A95BD337215D2294009B84FD /* Promise.swift in Sources */,
 				A95BD305215D1E5D009B84FD /* HTTPStatusCodes+Extensions.swift in Sources */,
 				A95BD323215D2096009B84FD /* MMJResult.swift in Sources */,
@@ -749,6 +764,7 @@
 				A95BD36E215D336A009B84FD /* NetworkService+REST.swift in Sources */,
 				A95BD32C215D20BD009B84FD /* Codable+Tools.swift in Sources */,
 				A95BD31C215D1F85009B84FD /* HTTPMethod.swift in Sources */,
+				A95BD377215D42E2009B84FD /* APILogger.swift in Sources */,
 				A95BD338215D2294009B84FD /* Promise.swift in Sources */,
 				A95BD306215D1E5D009B84FD /* HTTPStatusCodes+Extensions.swift in Sources */,
 				A95BD324215D2096009B84FD /* MMJResult.swift in Sources */,
