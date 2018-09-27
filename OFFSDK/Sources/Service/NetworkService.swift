@@ -137,7 +137,7 @@ open class NetworkService {
   private func getTokenPathPart() -> String? {
     if (authorizationType == .queryString) {
       guard let aTokenString = getTokenString(), let tokenName = tokenStringName else {
-//        MMJLogger.logError(domain: .network, message: "NetworkService: Token String and Name should not be nil!")
+        APILogger.instance.logError(domain: .network, message: "NetworkService: Token String and Name should not be nil!")
         return nil
       }
       let fullTokenString = "\(tokenName)=\(aTokenString)" //?access_token=502d0e0000c7aa332926924179c07c2e596df76f
@@ -213,7 +213,6 @@ open class NetworkService {
   private func makeRequestOld(with path: String) -> URLRequest {
     var request: URLRequest
     
-    ///api/v1.0/items?param1=3&param2=mob&access_token=e927b6f2efbfceaed4a2f1c6ac014789dd616198
     var parts = path.split(separator: "?").map { String($0) }
     //check if we need to append token
     if let tokenPart = getTokenPathPart(){
@@ -259,17 +258,17 @@ open class NetworkService {
   
   private func addRequestToCollection(sessionRequest: SessionRequest) { //save networkRequest in dictionary
     self.requests[sessionRequest.requestIdentifier] = sessionRequest
-//    MMJLogger.logDebug(domain: .network, message: "NetworkService: The request with ID \(sessionRequest.requestIdentifier) was added to requests.")
+    APILogger.instance.logDebug(domain: .network, message: "NetworkService: The request with ID \(sessionRequest.requestIdentifier) was added to requests.")
   }
   
   private func removeRequestFromCollections(sessionRequest: SessionRequest) {
     let identifier = sessionRequest.requestIdentifier
     if let value = self.requests.removeValue(forKey: identifier) {
-//      MMJLogger.logDebug(domain: .network, message: "NetworkService: The request with ID \(identifier) was removed from requests \(value).")
+      APILogger.instance.logDebug(domain: .network, message: "NetworkService: The request with ID \(identifier) was removed from requests \(value).")
     }
     if let index = self.requestsPendingAuthentication.index(of:sessionRequest) {
       self.requestsPendingAuthentication.remove(at: index)
-//      MMJLogger.logDebug(domain: .network, message: "NetworkService: The request at index \(index) was removed from Requests Pending Authentication.")
+      APILogger.instance.logDebug(domain: .network, message: "NetworkService: The request at index \(index) was removed from Requests Pending Authentication.")
     }
   }
   
@@ -291,9 +290,9 @@ open class NetworkService {
     //build request with path
     var request = makeRequest(with: path)
     
-//    MMJLogger.logDebug(domain: .network, message: "NetworkService: Request: Path : \(path)")
-//    MMJLogger.logDebug(domain: .network, message: "NetworkService: Request: method : \(method.rawValue)")
-//    MMJLogger.logDebug(domain: .network, message: "NetworkService: Request: Full Path: \(request.url!)")
+    APILogger.instance.logDebug(domain: .network, message: "NetworkService: Request: Path : \(path)")
+    APILogger.instance.logDebug(domain: .network, message: "NetworkService: Request: method : \(method.rawValue)")
+    APILogger.instance.logDebug(domain: .network, message: "NetworkService: Request: Full Path: \(request.url!)")
     
     //set body
     if let data = data { request.httpBody = data }
@@ -316,14 +315,14 @@ open class NetworkService {
   
   public func cancelRequest(with identifier: String) {
     if let request = self.requests[identifier] {
-//      MMJLogger.logDebug(domain: .network, message: "NetworkService: Request with ID: \(identifier) is about to be cancelled!")
+      APILogger.instance.logDebug(domain: .network, message: "NetworkService: Request with ID: \(identifier) is about to be cancelled!")
       request.cancel()
       self.requests.removeValue(forKey: identifier)
     }
   }
   
   public func resendRequestsPendingAuthentication() {
-//    MMJLogger.logDebug(domain: .network, message: "NetworkService: Resending Requests Pending Authentication!")
+    APILogger.instance.logDebug(domain: .network, message: "NetworkService: Resending Requests Pending Authentication!")
     _ = self.requestsPendingAuthentication.map {
       $0.restart()
     }
@@ -348,26 +347,26 @@ private func sendServiceNeedsAuthenticationNotification(with request: SessionReq
 extension NetworkService : SessionRequestProtocol {
   
   func sessionRequestDidStart(sessionRequest: SessionRequest) {
-//    MMJLogger.logDebug(domain: .app, message: "NetworkService: The request with ID \(sessionRequest.requestIdentifier) did Start!.")
+    APILogger.instance.logDebug(domain: .app, message: "NetworkService: The request with ID \(sessionRequest.requestIdentifier) did Start!.")
     requestStarted()
   }
   
   func sessionRequestDidComplete(sessionRequest: SessionRequest) {
     removeRequestFromCollections(sessionRequest: sessionRequest)
-//    MMJLogger.logDebug(domain: .app, message: "NetworkService: The request with ID \(sessionRequest.requestIdentifier) did End!.")
+    APILogger.instance.logDebug(domain: .app, message: "NetworkService: The request with ID \(sessionRequest.requestIdentifier) did End!.")
     requestEnded()
   }
   
   func sessionRequestFailed(sessionRequest: SessionRequest, error: Error?) {
     if let err = error {
-//      MMJLogger.logError(domain: .network, message: "NetworkService: sessionRequestFailed: \(err)")
+      APILogger.instance.logError(domain: .network, message: "NetworkService: sessionRequestFailed: \(err)")
     }
     removeRequestFromCollections(sessionRequest: sessionRequest)
   }
   
   func sessionRequestRequiresAuthentication(sessionRequest: SessionRequest) {
     self.requestsPendingAuthentication.append(sessionRequest)
-//    MMJLogger.logDebug(domain: .app, message: "NetworkService: The request with ID \(sessionRequest.requestIdentifier) was added to Requests Pending Authentication.")
+    APILogger.instance.logDebug(domain: .app, message: "NetworkService: The request with ID \(sessionRequest.requestIdentifier) was added to Requests Pending Authentication.")
     sendServiceNeedsAuthenticationNotification(with: sessionRequest)
   }
 }

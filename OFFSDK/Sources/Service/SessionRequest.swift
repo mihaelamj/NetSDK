@@ -88,11 +88,11 @@ public class SessionRequest {
       if let response = response as? HTTPURLResponse {
         
         guard let strongSelf = self else {
-//          MMJLogger.logError(domain: .network, message: "SessionRequest: Error: self is deallocated!!")
+          APILogger.instance.logError(domain: .network, message: "SessionRequest: Error: self is deallocated!!")
           if (mySelf == nil) {
-//            MMJLogger.logError(domain: .network, message: "SessionRequest: mySelf is NIL")
+            APILogger.instance.logError(domain: .network, message: "SessionRequest: mySelf is NIL")
           } else {
-//            MMJLogger.logDebug(domain: .network, message: "SessionRequest: mySelf: \(mySelf!)")
+            APILogger.instance.logDebug(domain: .network, message: "SessionRequest: mySelf: \(mySelf!)")
           }
           return
         }
@@ -102,7 +102,7 @@ public class SessionRequest {
 //        Debug.request(request, response: response, data: data)
         
         if (checkResponseStatus(status: response.statusCode, expectedStatuses: (self?.expectedStatuses)!)) {
-//          MMJLogger.logDebug(domain: .network, message: "SessionRequest: Success: \(request.httpMethod ?? "no method"),  \(String(describing: request.url!) ), status: \(response.statusCode)")
+          APILogger.instance.logDebug(domain: .network, message: "SessionRequest: Success: \(request.httpMethod ?? "no method"),  \(String(describing: request.url!) ), status: \(response.statusCode)")
           
           DispatchQueue.main.async {
             
@@ -114,11 +114,11 @@ public class SessionRequest {
                 errorObject = try JSONDecoder().decode(ErrorDataObject.self, from: data)
               } catch { }
             } else {
-//              MMJLogger.logError(domain: .network, message: "SessionRequest: Data part of response should not be nil")
+              APILogger.instance.logError(domain: .network, message: "SessionRequest: Data part of response should not be nil")
             }
             
             if (errorObject == nil) { //call result block as success
-//              MMJLogger.logInfo(domain: .network, message: "SessionRequest: Success")
+              APILogger.instance.logInfo(domain: .network, message: "SessionRequest: Success")
               strongSelf.resultBlock(MMJResult.success((data: data, response: response)))
               
             } else { //maybe we have an Error object
@@ -126,11 +126,11 @@ public class SessionRequest {
 //              let buttonError = errorObject!.makeButtonsError()
               let buttonError = APIError.notError
               if (buttonError == .notError) {
-//                MMJLogger.logInfo(domain: .network, message: "SessionRequest: Success")
+                APILogger.instance.logInfo(domain: .network, message: "SessionRequest: Success")
                 strongSelf.resultBlock(MMJResult.success((data: data, response: response)))
               } else {
                 //TODO: Check if token has expired
-//                MMJLogger.logError(domain: .network, message: "SessionRequest: Received ErrorDataObject instead of data: \(String(describing: errorObject))")
+                APILogger.instance.logError(domain: .network, message: "SessionRequest: Received ErrorDataObject instead of data: \(String(describing: errorObject))")
                 strongSelf.resultBlock(MMJResult.error(buttonError))
               }
               
@@ -142,7 +142,7 @@ public class SessionRequest {
           }
           
         } else if (response.statusCode == HTTPStatusCode.unauthorized.rawValue) {
-//          MMJLogger.logDebug(domain: .network, message: "SessionRequest: Authentication required for: \(request.httpMethod!), \(String(describing: request.url!)), \(statusesString((strongSelf.expectedStatuses)))")
+          APILogger.instance.logDebug(domain: .network, message: "SessionRequest: Authentication required for: \(request.httpMethod!), \(String(describing: request.url!)), \(statusesString((strongSelf.expectedStatuses)))")
           DispatchQueue.main.async {
             if let delegate = strongSelf.delegate { //call delegate to Authenticate
               delegate.sessionRequestRequiresAuthentication(sessionRequest: strongSelf)
@@ -150,7 +150,7 @@ public class SessionRequest {
           }
           
         } else {
-//          MMJLogger.logError(domain: .network, message: "SessionRequest: Invalid status code \(response.statusCode) for: \(String(describing: request.httpMethod!) ), \(String(describing: request.url!)), \(statusesString((strongSelf.expectedStatuses)))")
+          APILogger.instance.logError(domain: .network, message: "SessionRequest: Invalid status code \(response.statusCode) for: \(String(describing: request.httpMethod!) ), \(String(describing: request.url!)), \(statusesString((strongSelf.expectedStatuses)))")
           DispatchQueue.main.async {
             
             //call result block as error

@@ -48,7 +48,7 @@ public class APILogger  {
   //MARK: Template : to be subclassed -
   
   public func log(level: LoggerLevel, domain: LoggerDomain, message: String, image : Image? = nil) {
-    //NSLogger implementation
+    //TODO: NSLogger implementation
 //    let domain : Logger.Domain = Logger.Domain(rawValue: domain.rawValue)
 //    let level : Logger.Level = Logger.Level(rawValue: level.rawValue)
 //    Logger.shared.log(domain, level, message ?? "")
