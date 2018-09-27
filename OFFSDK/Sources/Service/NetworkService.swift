@@ -12,6 +12,46 @@ import Foundation
 import UIKit
 #endif
 
+// MARK: - Helper
+
+private func userAgentData(appTitle : String) -> String {
+  var content = appTitle
+  if let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+    content += "-v\(appVersion) "
+  }
+  if let bundleID = Bundle.main.infoDictionary?["CFBundleIdentifier"] as? String {
+    content += "\(bundleID) "
+  }
+  
+  #if canImport(UIKit)
+  let device = UIDevice.current.model
+  let osVersion = UIDevice.current.systemVersion
+  #elseif os(OSX)
+  let device = "macOS"
+  let osVersion = ProcessInfo.processInfo.operatingSystemVersionString
+  #else
+  let device = "Unknown"
+  let osVersion = "Unknown version"
+  #endif
+  
+  content += "\(device), "
+  content += "v\(osVersion)"
+  return content
+}
+
+private func appTitleWithOS(title: String) -> String {
+  #if os(iOS)
+  let os = "iOS"
+  #elseif os(tvOS)
+  let os = "tvOS"
+  #elseif os(OSX)
+  let os = "macOS"
+  #else
+  let os = "unknown"
+  #endif
+  return title + " " + os
+}
+
 //MARK: Globals -
 
 public enum MMJAuthorizationType: String {
@@ -41,33 +81,6 @@ protocol NetworkServiceProtocol : class {
   func getSessionToken() -> String?
 }
 
-// MARK: - Helper
-
-public func userAgentData(appTitle : String) -> String {
-  var content = appTitle
-  if let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-    content += "-v\(appVersion) "
-  }
-  if let bundleID = Bundle.main.infoDictionary?["CFBundleIdentifier"] as? String {
-    content += "\(bundleID) "
-  }
-  
-  #if canImport(UIKit)
-    let device = UIDevice.current.model
-    let osVersion = UIDevice.current.systemVersion
-  #elseif os(OSX)
-    let device = "macOS"
-//    let osVersion = NSAppKitVersion.current
-    let osVersion = ProcessInfo.processInfo.operatingSystemVersionString
-  #else
-    let device = "Unknown"
-    let osVersion = "Unknown version"
-  #endif
-  
-  content += "\(device), "
-  content += "v\(osVersion)"
-  return content
-}
 
 //MARK: NetworkService -
 
@@ -87,6 +100,8 @@ open class NetworkService {
   public var tokenStringName : String?
   
   public var userAgent : String?
+  
+  public var appTitle : String
   
 /// URLSession configuration
   let configuration : URLSessionConfiguration
@@ -108,19 +123,17 @@ open class NetworkService {
     sessionConf.urlCredentialStorage = nil
   }
   
+
+  
 // MARK: - Initialization
   
-  init(baseUrl: URL, configuration: URLSessionConfiguration) {
+  init(baseUrl: URL, configuration: URLSessionConfiguration, title: String) {
     self.baseUrl = baseUrl
     self.configuration = configuration
+    self.appTitle = appTitleWithOS(title: title)
+    self.userAgent = userAgentData(appTitle: self.appTitle)
     self.session = URLSession(configuration: self.configuration)
   }
-  
-  public static let `default`: NetworkService = {
-    let configuration = URLSessionConfiguration.default
-    let url = URL(string: "")!
-    return NetworkService(baseUrl: url, configuration: configuration)
-  }()
   
 
 // MARK: - Auth Token
