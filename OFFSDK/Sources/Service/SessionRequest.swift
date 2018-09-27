@@ -80,9 +80,6 @@ public class SessionRequest {
   
   private func makeDataTaskWeak() -> URLSessionDataTask {
     
-   // Allow plugins to modify request
-   // let preparedRequest = self.plugins.reduce(request) { $1.prepare($0, target: target) }
-    
     //a hack to make the Swift compiler not deallocate [weak self], really don't know why this shit happens, maybe because of _task and task???
     let mySelf : SessionRequest? = self
     

@@ -14,8 +14,3 @@ public enum Problem: Error {
   case errorObjectReturned
 }
 
-//public extension Problem {
-//  func problemForErrorObject(errorObject : ErrorDataObject) {
-//    
-//  }
-//}

@@ -57,17 +57,15 @@ public func userAgentData(appTitle : String) -> String {
     let osVersion = UIDevice.current.systemVersion
   #elseif os(OSX)
     let device = "macOS"
-    let osVersion = "macOS version"
+//    let osVersion = NSAppKitVersion.current
+    let osVersion = ProcessInfo.processInfo.operatingSystemVersionString
   #else
     let device = "Unknown"
     let osVersion = "Unknown version"
   #endif
   
-  content += "\(device) "
-  content += "iOSv\(osVersion)"
-//  if UIDevice.current.userInterfaceIdiom == .pad {
-//    content += " iPad"
-//  }
+  content += "\(device), "
+  content += "v\(osVersion)"
   return content
 }
 
