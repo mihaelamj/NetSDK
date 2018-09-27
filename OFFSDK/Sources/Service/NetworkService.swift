@@ -7,7 +7,10 @@
 //
 
 import Foundation
-//import UIKit
+
+#if canImport(UIKit)
+import UIKit
+#endif
 
 //MARK: Globals -
 
@@ -161,12 +164,8 @@ open class NetworkService {
     
     if (parts.count > 1) {
       let secondPart = parts[1]
-      //param1=3&param2=mob&access_token=e927b6f2efbfceaed4a2f1c6ac014789dd616198
       
       _ = secondPart.split(separator: "&").map { item in
-        
-        //param1=3
-        //param2=mob
         
         let itemParts = item.split(separator: "=").map {String($0)}
         
@@ -197,17 +196,7 @@ open class NetworkService {
       queryItems.append(tokenItem)
     }
     
-    //https://viewing.online/signup
-    //https://viewing.online/api/v1.0/signup
-    
     var components = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true)!
-    
-    /*
-     ▿ some : https://viewing.online/api/v1.0
-     - scheme : "https"
-     - host : "viewing.online"
-     - path : "/api/v1.0"
-     */
     
     debugPrint("\(components)")
     components.path = components.path + basePath
@@ -218,8 +207,6 @@ open class NetworkService {
     }
     
     let url = components.url
-    
-    ///api/v1.0/items?param1=3&param2=mob&access_token=e927b6f2efbfceaed4a2f1c6ac014789dd616198
     
     return URLRequest(url: url!)
   }
@@ -291,11 +278,11 @@ open class NetworkService {
   // MARK: - NetworkActivityIndicator
   
   private func requestStarted() {
-//    NetworkActivityIndicator.shared.push()
+    NetworkActivityIndicator.shared.push()
   }
   
   private func requestEnded() {
-//    NetworkActivityIndicator.shared.pop()
+    NetworkActivityIndicator.shared.pop()
   }
   
 
