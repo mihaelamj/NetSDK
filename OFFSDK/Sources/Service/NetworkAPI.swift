@@ -20,7 +20,7 @@ public class NetworkAPI {
     netService = service
   }
   
-  public static let `default`: NetworkAPI = {
+  public static let `test`: NetworkAPI = {
     let configuration = URLSessionConfiguration.default
     let testServer = "http://world.openfoodfacts.org/"
     let testSecureServer = "https://ssl-api.openfoodfacts.org/"

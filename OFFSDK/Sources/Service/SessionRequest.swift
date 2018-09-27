@@ -123,15 +123,15 @@ public class SessionRequest {
               
             } else { //maybe we have an Error object
               
-//              let buttonError = errorObject!.makeButtonsError()
-              let buttonError = APIError.notError
-              if (buttonError == .notError) {
+//              let apiError = errorObject!.makeAPIError()
+              let apiError = APIError.notError
+              if (apiError == .notError) {
                 APILogger.instance.logInfo(domain: .network, message: "SessionRequest: Success")
                 strongSelf.resultBlock(MMJResult.success((data: data, response: response)))
               } else {
                 //TODO: Check if token has expired
                 APILogger.instance.logError(domain: .network, message: "SessionRequest: Received ErrorDataObject instead of data: \(String(describing: errorObject))")
-                strongSelf.resultBlock(MMJResult.error(buttonError))
+                strongSelf.resultBlock(MMJResult.error(apiError))
               }
               
             }

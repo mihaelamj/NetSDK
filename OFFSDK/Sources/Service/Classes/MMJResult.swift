@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public enum MMJResult<Expectation> {
     case error(Error?)
     case success(Expectation)
