@@ -48,13 +48,23 @@ public func userAgentData(appTitle : String) -> String {
   if let bundleID = Bundle.main.infoDictionary?["CFBundleIdentifier"] as? String {
     content += "\(bundleID) "
   }
-  let device = UIDevice.current.model
+  
+  #if canImport(UIKit)
+    let device = UIDevice.current.model
+    let osVersion = UIDevice.current.systemVersion
+  #elseif os(OSX)
+    let device = "macOS"
+    let osVersion = "macOS version"
+  #else
+    let device = "Unknown"
+    let osVersion = "Unknown version"
+  #endif
+  
   content += "\(device) "
-  let osVersion = UIDevice.current.systemVersion
   content += "iOSv\(osVersion)"
-  if UIDevice.current.userInterfaceIdiom == .pad {
-    content += " iPad"
-  }
+//  if UIDevice.current.userInterfaceIdiom == .pad {
+//    content += " iPad"
+//  }
   return content
 }
 

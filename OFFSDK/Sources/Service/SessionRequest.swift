@@ -6,7 +6,7 @@
 //  Copyright © 2018 Mihaela Mihaljevic Jakic. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 //MARK: Helper -
 
