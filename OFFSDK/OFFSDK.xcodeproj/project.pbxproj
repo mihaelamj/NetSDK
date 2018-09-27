@@ -74,6 +74,9 @@
 		A95BD375215D42E2009B84FD /* APILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD374215D42E2009B84FD /* APILogger.swift */; };
 		A95BD376215D42E2009B84FD /* APILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD374215D42E2009B84FD /* APILogger.swift */; };
 		A95BD377215D42E2009B84FD /* APILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD374215D42E2009B84FD /* APILogger.swift */; };
+		A95BD379215D4D52009B84FD /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD378215D4D52009B84FD /* NetworkAPI.swift */; };
+		A95BD37A215D4D52009B84FD /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD378215D4D52009B84FD /* NetworkAPI.swift */; };
+		A95BD37B215D4D52009B84FD /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD378215D4D52009B84FD /* NetworkAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +156,7 @@
 		A95BD36B215D336A009B84FD /* NetworkService+REST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkService+REST.swift"; sourceTree = "<group>"; };
 		A95BD36F215D342F009B84FD /* NetworkService+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService+Helpers.swift"; sourceTree = "<group>"; };
 		A95BD374215D42E2009B84FD /* APILogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILogger.swift; sourceTree = "<group>"; };
+		A95BD378215D4D52009B84FD /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +334,7 @@
 				A95BD373215D40A6009B84FD /* Classes */,
 				A95BD310215D1F2A009B84FD /* SessionRequest.swift */,
 				A95BD315215D1F5D009B84FD /* NetworkService.swift */,
+				A95BD378215D4D52009B84FD /* NetworkAPI.swift */,
 				A95BD36B215D336A009B84FD /* NetworkService+REST.swift */,
 				A95BD36F215D342F009B84FD /* NetworkService+Helpers.swift */,
 				A95BD367215D3345009B84FD /* NetworkService+Promise.swift */,
@@ -698,6 +703,7 @@
 				A95BD307215D1E5D009B84FD /* HTTPStatusCodes.swift in Sources */,
 				A95BD316215D1F5D009B84FD /* NetworkService.swift in Sources */,
 				A95BD36C215D336A009B84FD /* NetworkService+REST.swift in Sources */,
+				A95BD379215D4D52009B84FD /* NetworkAPI.swift in Sources */,
 				A95BD32A215D20BD009B84FD /* Codable+Tools.swift in Sources */,
 				A95BD31A215D1F85009B84FD /* HTTPMethod.swift in Sources */,
 				A95BD375215D42E2009B84FD /* APILogger.swift in Sources */,
@@ -730,6 +736,7 @@
 				A95BD308215D1E5D009B84FD /* HTTPStatusCodes.swift in Sources */,
 				A95BD317215D1F5D009B84FD /* NetworkService.swift in Sources */,
 				A95BD36D215D336A009B84FD /* NetworkService+REST.swift in Sources */,
+				A95BD37A215D4D52009B84FD /* NetworkAPI.swift in Sources */,
 				A95BD32B215D20BD009B84FD /* Codable+Tools.swift in Sources */,
 				A95BD31B215D1F85009B84FD /* HTTPMethod.swift in Sources */,
 				A95BD376215D42E2009B84FD /* APILogger.swift in Sources */,
@@ -762,6 +769,7 @@
 				A95BD309215D1E5D009B84FD /* HTTPStatusCodes.swift in Sources */,
 				A95BD318215D1F5D009B84FD /* NetworkService.swift in Sources */,
 				A95BD36E215D336A009B84FD /* NetworkService+REST.swift in Sources */,
+				A95BD37B215D4D52009B84FD /* NetworkAPI.swift in Sources */,
 				A95BD32C215D20BD009B84FD /* Codable+Tools.swift in Sources */,
 				A95BD31C215D1F85009B84FD /* HTTPMethod.swift in Sources */,
 				A95BD377215D42E2009B84FD /* APILogger.swift in Sources */,
