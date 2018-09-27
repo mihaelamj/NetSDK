@@ -68,6 +68,9 @@
 		A95BD36C215D336A009B84FD /* NetworkService+REST.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD36B215D336A009B84FD /* NetworkService+REST.swift */; };
 		A95BD36D215D336A009B84FD /* NetworkService+REST.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD36B215D336A009B84FD /* NetworkService+REST.swift */; };
 		A95BD36E215D336A009B84FD /* NetworkService+REST.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD36B215D336A009B84FD /* NetworkService+REST.swift */; };
+		A95BD370215D342F009B84FD /* NetworkService+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD36F215D342F009B84FD /* NetworkService+Helpers.swift */; };
+		A95BD371215D342F009B84FD /* NetworkService+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD36F215D342F009B84FD /* NetworkService+Helpers.swift */; };
+		A95BD372215D342F009B84FD /* NetworkService+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD36F215D342F009B84FD /* NetworkService+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +148,7 @@
 		A95BD35E215D31E1009B84FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A95BD367215D3345009B84FD /* NetworkService+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkService+Promise.swift"; sourceTree = "<group>"; };
 		A95BD36B215D336A009B84FD /* NetworkService+REST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NetworkService+REST.swift"; sourceTree = "<group>"; };
+		A95BD36F215D342F009B84FD /* NetworkService+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +334,7 @@
 				A95BD310215D1F2A009B84FD /* SessionRequest.swift */,
 				A95BD315215D1F5D009B84FD /* NetworkService.swift */,
 				A95BD36B215D336A009B84FD /* NetworkService+REST.swift */,
+				A95BD36F215D342F009B84FD /* NetworkService+Helpers.swift */,
 				A95BD367215D3345009B84FD /* NetworkService+Promise.swift */,
 			);
 			path = Service;
@@ -669,6 +674,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A95BD370215D342F009B84FD /* NetworkService+Helpers.swift in Sources */,
 				A95BD33E215D30DE009B84FD /* NetworkActivityIndicator.swift in Sources */,
 				A95BD32E215D2114009B84FD /* ErrorDataObject.swift in Sources */,
 				A95BD368215D3345009B84FD /* NetworkService+Promise.swift in Sources */,
@@ -699,6 +705,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A95BD371215D342F009B84FD /* NetworkService+Helpers.swift in Sources */,
 				A95BD33F215D30DE009B84FD /* NetworkActivityIndicator.swift in Sources */,
 				A95BD32F215D2114009B84FD /* ErrorDataObject.swift in Sources */,
 				A95BD369215D3345009B84FD /* NetworkService+Promise.swift in Sources */,
@@ -729,6 +736,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A95BD372215D342F009B84FD /* NetworkService+Helpers.swift in Sources */,
 				A95BD340215D30DE009B84FD /* NetworkActivityIndicator.swift in Sources */,
 				A95BD330215D2114009B84FD /* ErrorDataObject.swift in Sources */,
 				A95BD36A215D3345009B84FD /* NetworkService+Promise.swift in Sources */,
