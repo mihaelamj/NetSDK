@@ -22,7 +22,7 @@ public enum MMJAuthorizationType: String {
 }
 
 /// A dictionary of parameters to apply to a `URLRequest`.
-public typealias Parameters = [String: Any]
+//public typealias Parameters = [String: Any]
 
 /// A dictionary of headers to apply to a `URLRequest`.
 public typealias HTTPHeaders = [String: String]
@@ -207,27 +207,6 @@ open class NetworkService {
     let url = components.url
     
     return URLRequest(url: url!)
-  }
-  
-  
-  private func makeRequestOld(with path: String) -> URLRequest {
-    var request: URLRequest
-    
-    var parts = path.split(separator: "?").map { String($0) }
-    //check if we need to append token
-    if let tokenPart = getTokenPathPart(){
-      parts.append(tokenPart)
-    }
-    
-    let url = baseUrl.appendingPathComponent(parts[0])
-    
-    if parts.count == 2, let query = parts.last, var components = URLComponents(string: url.absoluteString) {
-      components.query = query
-      request = URLRequest(url: components.url ?? url)
-    } else {
-      request = URLRequest(url: url)
-    }
-    return request
   }
   
   private func buildHTTPHeaders( for request: inout URLRequest, headers: HTTPHeaders = [:]) {
