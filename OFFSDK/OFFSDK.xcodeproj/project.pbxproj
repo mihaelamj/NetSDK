@@ -80,6 +80,9 @@
 		A95BD37D215D5648009B84FD /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD37C215D5648009B84FD /* String+Helpers.swift */; };
 		A95BD37E215D5648009B84FD /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD37C215D5648009B84FD /* String+Helpers.swift */; };
 		A95BD37F215D5648009B84FD /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD37C215D5648009B84FD /* String+Helpers.swift */; };
+		A95BD381215D5A25009B84FD /* GenericDecoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD380215D5A25009B84FD /* GenericDecoders.swift */; };
+		A95BD382215D5A25009B84FD /* GenericDecoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD380215D5A25009B84FD /* GenericDecoders.swift */; };
+		A95BD383215D5A25009B84FD /* GenericDecoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD380215D5A25009B84FD /* GenericDecoders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +164,7 @@
 		A95BD374215D42E2009B84FD /* APILogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILogger.swift; sourceTree = "<group>"; };
 		A95BD378215D4D52009B84FD /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		A95BD37C215D5648009B84FD /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
+		A95BD380215D5A25009B84FD /* GenericDecoders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDecoders.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,10 +340,10 @@
 			isa = PBXGroup;
 			children = (
 				A95BD373215D40A6009B84FD /* Classes */,
+				A95BD36F215D342F009B84FD /* NetworkService+Helpers.swift */,
 				A95BD310215D1F2A009B84FD /* SessionRequest.swift */,
 				A95BD315215D1F5D009B84FD /* NetworkService.swift */,
 				A95BD36B215D336A009B84FD /* NetworkService+REST.swift */,
-				A95BD36F215D342F009B84FD /* NetworkService+Helpers.swift */,
 				A95BD367215D3345009B84FD /* NetworkService+Promise.swift */,
 				A95BD378215D4D52009B84FD /* NetworkAPI.swift */,
 			);
@@ -378,6 +382,7 @@
 		A95BD373215D40A6009B84FD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A95BD380215D5A25009B84FD /* GenericDecoders.swift */,
 				A95BD37C215D5648009B84FD /* String+Helpers.swift */,
 				A95BD335215D2294009B84FD /* Promise.swift */,
 				A95BD325215D209F009B84FD /* Problem.swift */,
@@ -715,6 +720,7 @@
 				A95BD375215D42E2009B84FD /* APILogger.swift in Sources */,
 				A95BD336215D2294009B84FD /* Promise.swift in Sources */,
 				A95BD304215D1E5D009B84FD /* HTTPStatusCodes+Extensions.swift in Sources */,
+				A95BD381215D5A25009B84FD /* GenericDecoders.swift in Sources */,
 				A95BD322215D2096009B84FD /* MMJResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -749,6 +755,7 @@
 				A95BD376215D42E2009B84FD /* APILogger.swift in Sources */,
 				A95BD337215D2294009B84FD /* Promise.swift in Sources */,
 				A95BD305215D1E5D009B84FD /* HTTPStatusCodes+Extensions.swift in Sources */,
+				A95BD382215D5A25009B84FD /* GenericDecoders.swift in Sources */,
 				A95BD323215D2096009B84FD /* MMJResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -783,6 +790,7 @@
 				A95BD377215D42E2009B84FD /* APILogger.swift in Sources */,
 				A95BD338215D2294009B84FD /* Promise.swift in Sources */,
 				A95BD306215D1E5D009B84FD /* HTTPStatusCodes+Extensions.swift in Sources */,
+				A95BD383215D5A25009B84FD /* GenericDecoders.swift in Sources */,
 				A95BD324215D2096009B84FD /* MMJResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
