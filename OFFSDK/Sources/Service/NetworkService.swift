@@ -258,7 +258,7 @@ open class NetworkService {
     if let value = self.requests.removeValue(forKey: identifier) {
       APILogger.instance.logDebug(domain: .network, message: "NetworkService: The request with ID \(identifier) was removed from requests \(value).")
     }
-    if let index = self.requestsPendingAuthentication.index(of:sessionRequest) {
+    if let index = self.requestsPendingAuthentication.firstIndex(of:sessionRequest) {
       self.requestsPendingAuthentication.remove(at: index)
       APILogger.instance.logDebug(domain: .network, message: "NetworkService: The request at index \(index) was removed from Requests Pending Authentication.")
     }
