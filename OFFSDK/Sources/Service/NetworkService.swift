@@ -70,7 +70,7 @@ public typealias HTTPHeaders = [String: String]
 /// A network operation response `URLResponse`.
 public typealias DataResponse = (data: Data?, response: URLResponse)
 
-public typealias DataTaskResultBlock = ((_ result: MMJResult<DataResponse>) -> ())
+public typealias DataTaskResultBlock = ((_ result: APIResult<DataResponse>) -> ())
 
 public typealias TokenResultBlock = () -> String
 

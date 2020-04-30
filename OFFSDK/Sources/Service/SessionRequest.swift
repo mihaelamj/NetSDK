@@ -117,18 +117,18 @@ public class SessionRequest {
             
             if (errorObject == nil) { //call result block as success
               APILogger.instance.logInfo(domain: .network, message: "SessionRequest: Success")
-              strongSelf.resultBlock(MMJResult.success((data: data, response: response)))
+              strongSelf.resultBlock(APIResult.success((data: data, response: response)))
               
             } else { //maybe we have an Error object
               
               let apiError = APIError.notError
               if (apiError == .notError) {
                 APILogger.instance.logInfo(domain: .network, message: "SessionRequest: Success")
-                strongSelf.resultBlock(MMJResult.success((data: data, response: response)))
+                strongSelf.resultBlock(APIResult.success((data: data, response: response)))
               } else {
                 //TODO: Check if token has expired
                 APILogger.instance.logError(domain: .network, message: "SessionRequest: Received ErrorDataObject instead of data: \(String(describing: errorObject))")
-                strongSelf.resultBlock(MMJResult.error(apiError))
+                strongSelf.resultBlock(APIResult.error(apiError))
               }
               
             }
@@ -151,7 +151,7 @@ public class SessionRequest {
           DispatchQueue.main.async {
             
             //call result block as error
-            strongSelf.resultBlock(MMJResult.error(Problem.invalidStatusCode))
+            strongSelf.resultBlock(APIResult.error(Problem.invalidStatusCode))
             
             if let delegate = strongSelf.delegate { //call delegate
               delegate.sessionRequestFailed(sessionRequest: strongSelf, error: error)

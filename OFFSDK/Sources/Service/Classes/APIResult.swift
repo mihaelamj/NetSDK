@@ -8,12 +8,12 @@
 
 import Foundation
 
-public enum MMJResult<Expectation> {
+public enum APIResult<Expectation> {
     case error(Error?)
     case success(Expectation)
 }
 
-extension MMJResult where Expectation == DataResponse {
+extension APIResult where Expectation == DataResponse {
     public func unwrap() throws -> Expectation {
         switch self {
         case .success(let expectation):

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import OFFSDKiOSApp
+//@testable import OFFSDKiOSApp
 
 class OFFSDKiOSAppTests: XCTestCase {
 
