@@ -99,8 +99,6 @@ public class SessionRequest {
         
         let request = strongSelf.request
         
-//        Debug.request(request, response: response, data: data)
-        
         if (checkResponseStatus(status: response.statusCode, expectedStatuses: (self?.expectedStatuses)!)) {
           APILogger.instance.logDebug(domain: .network, message: "SessionRequest: Success: \(request.httpMethod ?? "no method"),  \(String(describing: request.url!) ), status: \(response.statusCode)")
           
@@ -123,7 +121,6 @@ public class SessionRequest {
               
             } else { //maybe we have an Error object
               
-//              let apiError = errorObject!.makeAPIError()
               let apiError = APIError.notError
               if (apiError == .notError) {
                 APILogger.instance.logInfo(domain: .network, message: "SessionRequest: Success")

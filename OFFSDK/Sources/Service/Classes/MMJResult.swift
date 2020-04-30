@@ -14,7 +14,6 @@ public enum MMJResult<Expectation> {
 }
 
 extension MMJResult where Expectation == DataResponse {
-    
     public func unwrap() throws -> Expectation {
         switch self {
         case .success(let expectation):
@@ -26,10 +25,8 @@ extension MMJResult where Expectation == DataResponse {
             throw error
         }
     }
-    
     public func unwrap<T>(to: T.Type) throws -> T where T: Decodable {
         let object = try unwrap().data!.asObject(to: to)
         return object
     }
-    
 }

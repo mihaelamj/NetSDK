@@ -165,7 +165,7 @@ open class NetworkService {
   private func getQueryItems(with path: String, basePath: inout String) -> [URLQueryItem] {
     var queryItems = [URLQueryItem]()
     
-    var parts = path.split(separator: "?").map { String($0) }
+    let parts = path.split(separator: "?").map { String($0) }
     
     if parts.count > 0 {
       basePath = parts[0]
@@ -288,9 +288,6 @@ open class NetworkService {
     
     //set body
     if let data = data { request.httpBody = data }
-    //addd data
-    
-//    Debug.request(request, response: nil, data: data)
     
     //set method
     request.httpMethod = method.rawValue

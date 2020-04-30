@@ -55,7 +55,7 @@ public final class ErrorDataObject : Decodable {
 
 public extension ErrorDataObject {
   
-  public func makeAPIError() -> APIError {
+  func makeAPIError() -> APIError {
     if error.isAmostEqual(to: "expired_token") || errorDescription.isAmostEqual(to: "expired_token") {
       return APIError.expiredToken
     } else if error.isAmostEqual(to: "User already exists") || errorDescription.isAmostEqual(to: "User already exists") {
