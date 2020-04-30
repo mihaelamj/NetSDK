@@ -54,7 +54,7 @@ private func appTitleWithOS(title: String) -> String {
 
 //MARK: Globals -
 
-public enum MMJAuthorizationType: String {
+public enum APIAuthorizationType: String {
   case none
   case basic = "Basic"
   case bearer = "Bearer"
@@ -95,7 +95,7 @@ open class NetworkService {
   //Closure that returns a string token
   public var tokenClosure: TokenResultBlock? = nil
   
-  public var authorizationType : MMJAuthorizationType = .none
+  public var authorizationType : APIAuthorizationType = .none
   
   public var tokenStringName : String?
   
