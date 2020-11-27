@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A90A447E25716B1100045CA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90A447D25716B1100045CA5 /* AppDelegate.swift */; };
+		A90A448025716B1100045CA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90A447F25716B1100045CA5 /* ViewController.swift */; };
+		A90A448225716B1200045CA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A90A448125716B1200045CA5 /* Assets.xcassets */; };
+		A90A448525716B1200045CA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90A448325716B1200045CA5 /* Main.storyboard */; };
+		A90A449425716B1D00045CA5 /* OFFSDKmacOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95BD2CF215D1D08009B84FD /* OFFSDKmacOS.framework */; };
+		A90A449525716B1D00045CA5 /* OFFSDKmacOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A95BD2CF215D1D08009B84FD /* OFFSDKmacOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A95BD2BC215D1CDB009B84FD /* OFFSDKiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95BD2B3215D1CDB009B84FD /* OFFSDKiOS.framework */; };
 		A95BD2C1215D1CDB009B84FD /* OFFSDKiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95BD2C0215D1CDB009B84FD /* OFFSDKiOSTests.swift */; };
 		A95BD2C3215D1CDB009B84FD /* OFFSDKiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = A95BD2B5215D1CDB009B84FD /* OFFSDKiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -86,6 +92,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A90A449625716B1D00045CA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A95BD28B215D1C80009B84FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A95BD2CE215D1D08009B84FD;
+			remoteInfo = OFFSDKmacOS;
+		};
 		A95BD2BD215D1CDB009B84FD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A95BD28B215D1C80009B84FD /* Project object */;
@@ -116,7 +129,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A90A449825716B1D00045CA5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A90A449525716B1D00045CA5 /* OFFSDKmacOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		A90A447B25716B1100045CA5 /* OFFSDKMacApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OFFSDKMacApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A90A447D25716B1100045CA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A90A447F25716B1100045CA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A90A448125716B1200045CA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A90A448425716B1200045CA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A90A448625716B1200045CA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A90A448725716B1200045CA5 /* OFFSDKMacApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OFFSDKMacApp.entitlements; sourceTree = "<group>"; };
 		A95BD2B3215D1CDB009B84FD /* OFFSDKiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OFFSDKiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95BD2B5215D1CDB009B84FD /* OFFSDKiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OFFSDKiOS.h; sourceTree = "<group>"; };
 		A95BD2B6215D1CDB009B84FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -168,6 +202,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A90A447825716B1100045CA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A90A449425716B1D00045CA5 /* OFFSDKmacOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A95BD2B0215D1CDB009B84FD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -231,6 +273,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A90A447C25716B1100045CA5 /* OFFSDKMacApp */ = {
+			isa = PBXGroup;
+			children = (
+				A90A447D25716B1100045CA5 /* AppDelegate.swift */,
+				A90A447F25716B1100045CA5 /* ViewController.swift */,
+				A90A448125716B1200045CA5 /* Assets.xcassets */,
+				A90A448325716B1200045CA5 /* Main.storyboard */,
+				A90A448625716B1200045CA5 /* Info.plist */,
+				A90A448725716B1200045CA5 /* OFFSDKMacApp.entitlements */,
+			);
+			path = OFFSDKMacApp;
+			sourceTree = "<group>";
+		};
 		A95BD28A215D1C80009B84FD = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +298,7 @@
 				A95BD2F7215D1D25009B84FD /* OFFSDKtvOSTests */,
 				A95BD346215D31DF009B84FD /* OFFSDKiOSApp */,
 				A95BD35B215D31E1009B84FD /* OFFSDKiOSAppTests */,
+				A90A447C25716B1100045CA5 /* OFFSDKMacApp */,
 				A95BD295215D1C80009B84FD /* Products */,
 				A95BD365215D329C009B84FD /* Frameworks */,
 			);
@@ -259,6 +315,7 @@
 				A95BD2F3215D1D25009B84FD /* OFFSDKtvOSTests.xctest */,
 				A95BD345215D31DF009B84FD /* OFFSDKiOSApp.app */,
 				A95BD358215D31E1009B84FD /* OFFSDKiOSAppTests.xctest */,
+				A90A447B25716B1100045CA5 /* OFFSDKMacApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -427,6 +484,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		A90A447A25716B1100045CA5 /* OFFSDKMacApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A90A448A25716B1200045CA5 /* Build configuration list for PBXNativeTarget "OFFSDKMacApp" */;
+			buildPhases = (
+				A90A447725716B1100045CA5 /* Sources */,
+				A90A447825716B1100045CA5 /* Frameworks */,
+				A90A447925716B1100045CA5 /* Resources */,
+				A90A449825716B1D00045CA5 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A90A449725716B1D00045CA5 /* PBXTargetDependency */,
+			);
+			name = OFFSDKMacApp;
+			productName = OFFSDKMacApp;
+			productReference = A90A447B25716B1100045CA5 /* OFFSDKMacApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A95BD2B2215D1CDB009B84FD /* OFFSDKiOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A95BD2C4215D1CDB009B84FD /* Build configuration list for PBXNativeTarget "OFFSDKiOS" */;
@@ -576,10 +652,13 @@
 		A95BD28B215D1C80009B84FD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Mihaela Mihaljevic Jakic";
 				TargetAttributes = {
+					A90A447A25716B1100045CA5 = {
+						CreatedOnToolsVersion = 12.2;
+					};
 					A95BD2B2215D1CDB009B84FD = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1140;
@@ -634,11 +713,21 @@
 				A95BD2F2215D1D25009B84FD /* OFFSDKtvOSTests */,
 				A95BD344215D31DF009B84FD /* OFFSDKiOSApp */,
 				A95BD357215D31E1009B84FD /* OFFSDKiOSAppTests */,
+				A90A447A25716B1100045CA5 /* OFFSDKMacApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A90A447925716B1100045CA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A90A448225716B1200045CA5 /* Assets.xcassets in Resources */,
+				A90A448525716B1200045CA5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A95BD2B1215D1CDB009B84FD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -701,6 +790,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A90A447725716B1100045CA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A90A448025716B1100045CA5 /* ViewController.swift in Sources */,
+				A90A447E25716B1100045CA5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A95BD2AF215D1CDB009B84FD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -826,6 +924,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A90A449725716B1D00045CA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A95BD2CE215D1D08009B84FD /* OFFSDKmacOS */;
+			targetProxy = A90A449625716B1D00045CA5 /* PBXContainerItemProxy */;
+		};
 		A95BD2BE215D1CDB009B84FD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A95BD2B2215D1CDB009B84FD /* OFFSDKiOS */;
@@ -849,6 +952,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		A90A448325716B1200045CA5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A90A448425716B1200045CA5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		A95BD34B215D31DF009B84FD /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -868,6 +979,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A90A448825716B1200045CA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = OFFSDKMacApp/OFFSDKMacApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = XBE2EP7T4F;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = OFFSDKMacApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mihaelamj.me.OFFSDKMacApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A90A448925716B1200045CA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = OFFSDKMacApp/OFFSDKMacApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = XBE2EP7T4F;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = OFFSDKMacApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mihaelamj.me.OFFSDKMacApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		A95BD2A6215D1C81009B84FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1364,6 +1523,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A90A448A25716B1200045CA5 /* Build configuration list for PBXNativeTarget "OFFSDKMacApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A90A448825716B1200045CA5 /* Debug */,
+				A90A448925716B1200045CA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A95BD28E215D1C80009B84FD /* Build configuration list for PBXProject "OFFSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
